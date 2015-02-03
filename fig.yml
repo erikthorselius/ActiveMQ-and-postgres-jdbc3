@@ -1,0 +1,21 @@
+activemq:
+  build: ./
+  ports:
+    - "8161"
+    - "61616"
+  environment:
+    - DB_URI=db
+    - DB_NAME=postgres
+    - DB_USERNAME=postgres
+    - DB_PASSWORD=mysecretpassword
+    - CONSOLE_USERNAME=admin
+    - CONSOLE_PASSWORD=apassword
+    - QUEUE_USERNAME=queue
+    - QUEUE_PASSWORD=somepassword
+  links:
+    - db
+db:
+  image: postgres
+  environment:
+    - POSTGRES_PASSWORD=mysecretpassword
+
