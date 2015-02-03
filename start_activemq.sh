@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+cp -r /conf ./conf
 echo "Create jetty-realm.properties file..."
 sed -e "s/CONSOLE_USERNAME/${CONSOLE_USERNAME}/" \
     -e "s/CONSOLE_PASSWORD/${CONSOLE_PASSWORD}/" \

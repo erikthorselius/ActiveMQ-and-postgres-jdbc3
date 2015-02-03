@@ -12,12 +12,13 @@ RUN \
     curl -O https://jdbc.postgresql.org/download/postgresql-9.3-1102.jdbc3.jar && \
     rm -rf /opt/$ACTIVEMQ/conf
 
-ADD conf /opt/$ACTIVEMQ/conf
-ADD bin /opt/$ACTIVEMQ/bin
-
 WORKDIR /opt/activemq
 
 EXPOSE 8161 
 EXPOSE 61616
+
+ADD ./start_activemq.sh /opt/activemq/bin/
+
+VOLUME /conf
 
 CMD ["/bin/bash", "bin/start_activemq.sh"]

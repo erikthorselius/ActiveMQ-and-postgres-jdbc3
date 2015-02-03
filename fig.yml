@@ -12,6 +12,8 @@ activemq:
     - CONSOLE_PASSWORD=apassword
     - QUEUE_USERNAME=queue
     - QUEUE_PASSWORD=somepassword
+  volumes:
+    - ../crs/message_queue/conf:/conf/
   links:
     - db
 db:
